@@ -12,3 +12,10 @@ library(slidify)
 #create project name
 author("Project Presentation")
 
+#Publish
+publish_github(user,repo_name)
+
+#Enter inline math code $x^2$
+
+
+
