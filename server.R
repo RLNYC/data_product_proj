@@ -9,13 +9,12 @@ shinyServer(function(input, output) {
                        from = input$dates[1],
                        to = input$dates[2],
                        auto.assign = FALSE)
-    #adjusted <- paste(input$symb,".Adjusted",sep="")
-    #volume <- paste(input$symb,".Volume",sep="")
-    #data <- data[, c(adjusted,volume), drop=F]
+    adjusted <- paste(input$symb,".Adjusted",sep="")
+    volume <- paste(input$symb,".Volume",sep="")
+    data <- data[, c(adjusted,volume), drop=F]
     
     chartSeries(data,theme=chartTheme("white"),name=input$symb,
                 type="candle",TA=ifelse(input$SMA90==TRUE,"addSMA(90)","NULL"))
-    #addSMA(n = 90, on = 1, with.col = Cl, overlay = TRUE, col = "red")
     addVo()
     
     
